@@ -1,0 +1,43 @@
+ TOTAL: 12 imagenes 
+TAMAÑO DE 512x270
+
+====================================
+IMAGENES DE UBICACION: 3 imagenes
+interfaz-busqueda 400x234
+mapa-ubicacion 512x270
+datalle-documentario 496x503
+
+========================================
+IMAGENES DE HISTORIAL:   3 imagenes
+historial-detallado
+(vista completa de todos los movimientos de un documento)
+Flujo-documental
+(Visualización gráfica del recorrido del documento)
+reporte-tiempos
+(Reporte estadístico de tiempos por etapa)
+
+========================================
+IMAGENES ESTADISTICAS: 3 imagenes 
+dashbard-principal
+(Vista general de los indicadores clave de desempeño)
+Análisis de Tiempos
+(Comparación detallada de tiempos de procesamiento)
+Reporte Personalizado
+Interfaz para creación de reportes a medida
+
+========================================
+MEJORA-CONTINUA: 3 imagenes
+dashboard de mejora
+(Panel de control con indicadores clave de desempeño)
+Análisis Comparativo
+(Evaluación de métricas antes y después de mejoras)
+Plan de Acción
+(Seguimiento de iniciativas de optimización)
+
+
+
+
+
+
+
+

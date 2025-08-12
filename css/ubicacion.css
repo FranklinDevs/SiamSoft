@@ -1,0 +1,812 @@
+/* 
+ * VARIABLES CSS GLOBALES
+ * colores y valores reutilizables en todo el documento
+ */
+:root {
+  /* Paleta de colores principal */
+  --primary-color: #1a73e8;       /* Azul corporativo principal ✓ */
+  --primary-dark: #003d82;        /* Azul oscuro para contrastes ✓ */
+  --teal-color: #005f73;          /* Color azul-verdoso corporativo ✓ */
+  --light-color: #f8f9fa;         /* Fondo claro para el cuerpo ✓ */
+  --text-color: #3c4043;          /* Color principal para texto ✓ */
+  --white: #ffffff;               /* Blanco puro ✓ */
+  
+  /* Efectos de transición */
+  --easing: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva de animación */
+  --transition: all 0.3s ease;    /* Transición estándar */
+}
+
+/* 
+ * RESET Y ESTILOS BASE 
+ * Establece valores iniciales consistentes en todos los navegadores
+ */
+* {
+  margin: 0;                      /* Elimina márgenes por defecto */
+  padding: 0;                     /* Elimina padding por defecto */
+  box-sizing: border-box;         /* Modelo de caja más intuitivo */
+}
+
+/* 
+ * ESTILOS GENERALES DEL CUERPO 
+ * tipografía base y colores principales
+ */
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;               /* Espaciado de línea legible */
+  color: var(--text-color);       /* Color de texto principal */
+  background-color: var(--light-color); /* Color de fondo */
+  transition: var(--transition);  /* Transición para cambios de tema */
+}
+
+/* 
+ * CONTENEDOR PRINCIPAL 
+ * Centra el contenido y establece un ancho máximo
+ */
+.container {
+  max-width: 1200px;              /* Ancho máximo del contenido */
+  margin: 0 auto;                 /* Centrado horizontal */
+  padding: 0 20px;                /* Padding lateral responsive */
+}
+
+/* 
+ * JERARQUÍA DE TÍTULOS 
+ * Estilos consistentes para los headings
+ */
+h1 {
+  font-size: 2.5rem;              /* Tamaño grande para título principal */
+  line-height: 1.2;               /* Espaciado ajustado */
+  color: var(--light-color);      /* Color claro para contraste */
+}
+
+h2 {
+  font-size: 2rem;                /* Tamaño para subtítulos */
+  font-weight: 700;               /* Grosor de fuente */
+  border-bottom: 2px solid var(--teal-color); /* Línea decorativa */
+  padding-bottom: 0.5rem;         /* Espacio bajo el texto */
+  margin-top: 2rem;               /* Margen superior */
+  margin-bottom: 1rem;            /* Margen inferior */
+  color: #000000;                 /* Color negro para títulos */
+}
+
+h3 {
+  font-size: 1.5rem;              /* Tamaño para secciones */
+  font-weight: 700;               /* Grosor de fuente */
+  margin-bottom: 1rem;            /* Margen inferior */
+  color: #000000;                 /* Color negro */
+}
+
+h4 {
+  font-size: 1.2rem;              /* Tamaño para subtítulos menores */
+  color: var(--teal-color);       /* Color corporativo */
+}
+
+/* 
+ * ELEMENTOS DE TEXTO 
+ * Estilos para párrafos y enlaces
+ */
+p {
+  margin-bottom: 1.2rem;          /* Espaciado entre párrafos */
+  font-size: 1.1rem;              /* Tamaño de fuente legible */
+}
+
+.subtitle {
+  font-size: 1.3rem;              /* Tamaño intermedio */
+  max-width: 800px;               /* Ancho máximo para legibilidad */
+  margin: 0 auto;                 /* Centrado */
+  opacity: 0.9;                   /* Transparencia sutil */
+  color: rgba(255, 255, 255, 0.9); /* Blanco semi-transparente */
+}
+
+a {
+  text-decoration: none;          /* Sin subrayado */
+  color: var(--secondary-color);  /* Color de enlaces */
+  transition: var(--transition);  /* Transición suave para hover */
+}
+
+/* 
+ * HEADER PRINCIPAL - Cabecera de la página
+ * Cabecera con gradiente y sombra
+ */
+header {
+  background-color: #005f73;      /* Color de fondo sólido */
+  color: white;                   /* Texto blanco */
+  padding: 60px 0 80px;           /* Espaciado interno */
+  text-align: center;             /* Centrado de contenido */
+  margin-bottom: 40px;            /* Separación con el contenido */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* 
+ * SECCIONES DE CARACTERÍSTICAS 
+ * Tarjetas con efecto hover
+ */
+.feature-section {
+  background: white;              /* Fondo blanco */
+  border-radius: 8px;             /* Esquinas redondeadas */
+  padding: 30px;                  /* Espaciado interno */
+  margin-bottom: 30px;            /* Separación entre secciones */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición */
+}
+
+.feature-section:hover {
+  transform: translateY(-3px);    /* Efecto de elevación */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* 
+ * SECCIÓN DESTACADA 
+ * Estilo especial para contenido resaltado
+ */
+.feature-highlight {
+  background-color: #f0f7ff;      /* Fondo azul muy claro */
+  border-left: 4px solid var(--teal-color); /* Borde lateral */
+  padding: 25px;                  /* Espaciado interno */
+  margin: 30px 0;                 /* Margen vertical */
+  border-radius: 4px;             /* Esquinas ligeramente redondeadas */
+}
+
+/* 
+ * LISTA DE BENEFICIOS 
+ * Estilo con iconos de check
+ */
+.benefits-list {
+  list-style-type: none;          /* Elimina viñetas por defecto */
+  padding-left: 0;                /* Elimina padding izquierdo */
+}
+
+.benefits-list li {
+  position: relative;             /* Para posicionar el pseudo-elemento */
+  padding-left: 30px;             /* Espacio para el icono */
+  margin-bottom: 15px;            /* Separación entre ítems */
+  transition: transform 0.2s ease; /* Transición para efecto hover */
+}
+
+.benefits-list li:hover {
+  transform: translateX(5px);     /* Desplazamiento al hacer hover */
+}
+
+/* Icono de check usando Font Awesome */
+.benefits-list li:before {
+  content: "\f00c";               /* Código del icono check */
+  font-family: "Font Awesome 6 Free"; /* Fuente de iconos */
+  font-weight: 900;               /* Peso de la fuente (solid) */
+  color: var(--teal-color);       /* Color corporativo */
+  position: absolute;             /* Posicionamiento absoluto */
+  left: 0;                        /* Alineado a la izquierda */
+}
+
+/* 
+ * LISTA DE PROCESOS NUMERADA 
+ * Estilo con números circulares
+ */
+.process-steps {
+  counter-reset: step-counter;    /* Inicia contador */
+  list-style-type: none;          /* Elimina numeración por defecto */
+  padding-left: 0;                /* Elimina padding izquierdo */
+}
+
+.process-steps li {
+  position: relative;             /* Para posicionar el número */
+  padding-left: 50px;             /* Espacio para el número */
+  margin-bottom: 20px;            /* Separación entre pasos */
+  counter-increment: step-counter; /* Incrementa el contador */
+}
+
+/* Estilo de los números circulares */
+.process-steps li:before {
+  content: counter(step-counter); /* Muestra el número */
+  position: absolute;             /* Posicionamiento absoluto */
+  left: 0;                        /* Alineado a la izquierda */
+  top: 0;                         /* Alineado arriba */
+  width: 30px;                    /* Ancho del círculo */
+  height: 30px;                   /* Alto del círculo */
+  background: var(--teal-color);   /* Color de fondo */
+  color: white;                   /* Color del número */
+  border-radius: 50%;             /* Forma circular */
+  display: flex;                  /* Centrado con flexbox */
+  align-items: center;            /* Centrado vertical */
+  justify-content: center;        /* Centrado horizontal */
+  font-weight: bold;              /* Texto en negrita */
+}
+
+/* 
+ * CARRUSEL DE IMÁGENES 
+ * Componente interactivo para mostrar capturas de imagenes
+ */
+.carousel-container {
+  width: 100%;                    /* Ancho completo */
+  max-width: 1000px;              /* Ancho máximo */
+  margin: 40px auto;              /* Centrado con margen */
+  position: relative;             /* Contexto de posicionamiento */
+}
+
+.carousel {
+  position: relative;             /* Contexto para elementos absolutos */
+  width: 100%;                    /* Ancho completo */
+  border-radius: 12px;            /* Esquinas redondeadas */
+  overflow: hidden;               /* Oculta contenido que sobresale */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra pronunciada */
+}
+
+.carousel-inner {
+  position: relative;             /* Contexto para slides */
+  width: 100%;                    /* Ancho completo */
+  height: 500px;                  /* Altura fija */
+  overflow: hidden;               /* Oculta slides no activos */
+  background-color: var(--dark);  /* Fondo oscuro por defecto */
+}
+
+/* Estilos para cada slide */
+.carousel-item {
+  position: absolute;             /* Posicionamiento superpuesto */
+  top: 0;                         /* Alineado arriba */
+  left: 0;                        /* Alineado a la izquierda */
+  width: 100%;                    /* Ancho completo */
+  height: 100%;                   /* Alto completo */
+  opacity: 0;                     /* Inicialmente invisible */
+  transition: opacity var(--transition) var(--easing); /* Transición suave */
+}
+
+/* Slide activo */
+.carousel-item.active {
+  opacity: 1;                     /* Visible */
+  z-index: 1;                     /* Traído al frente */
+}
+
+/* Estilos para imágenes del carrusel */
+.carousel-item img {
+  width: 100%;                    /* Ancho completo */
+  height: 100%;                   /* Alto completo */
+  object-fit: cover;              /* Ajuste de imagen */
+  object-position: center;        /* Centrado */
+  filter: blur(2px);              /* Efecto blur inicial (Imagen borrosa por defecto) */
+  transition: filter 0.7s ease;   /* Transición para efecto blur */
+}
+
+/* Imagen activa sin blur */
+.carousel-item.active img {
+  filter: blur(0);                /* Elimina el blur (Imagen nítida en la activa) */
+}
+
+/* Texto descriptivo sobre imágenes (texto centrado) */
+.carousel-caption {
+  position: absolute;             /* Posicionamiento sobre la imagen */
+  bottom: 0;                      /* Alineado abajo */
+  left: 0;                        /* Alineado a la izquierda */
+  right: 0;                       /* Ancho completo */
+  background: linear-gradient(to top, rgb(0, 0, 0), transparent); /* Degradado */
+  color: rgba(235, 228, 228, 0.937); /* Color de texto */
+  padding: 30px;                  /* Espaciado interno */
+  text-align: center;             /* Texto centrado */
+  transform: translateY(20px);    /* Posición inicial fuera de vista */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Animación de entrada */
+  opacity: 0;                     /* Inicialmente transparente */
+  z-index: 2;                     /* Sobre la imagen */
+}
+
+/* Texto visible cuando el slide está activo */
+.carousel-item.active .carousel-caption {
+  transform: translateY(0);       /* Posición final */
+  opacity: 1;                     /* Visible */
+}
+
+/* Controles de navegación */
+.carousel-control {
+  position: absolute;             /* Posicionamiento absoluto */
+  top: 50%;                       /* Centrado vertical */
+  transform: translateY(-50%);    /* Ajuste fino de centrado */
+  background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  color: var(--primary-color);    /* Color del icono */
+  border: none;                   /* Sin borde */
+  width: 50px;                    /* Ancho */
+  height: 50px;                   /* Alto */
+  border-radius: 50%;             /* Forma circular */
+  cursor: pointer;                /* Cursor pointer */
+  font-size: 1.25rem;             /* Tamaño del icono */
+  transition: all 0.3s ease;      /* Transición suave */
+  display: flex;                  /* Centrado con flexbox */
+  align-items: center;            /* Centrado vertical */
+  justify-content: center;        /* Centrado horizontal */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  z-index: 10;                    /* Sobre otros elementos */
+  opacity: 0.8;                   /* Ligera transparencia */
+}
+
+/* Efecto hover para controles */
+.carousel-control:hover {
+  background: white;              /* Fondo sólido */
+  opacity: 1;                     /* Sin transparencia */
+  transform: translateY(-50%) scale(1.1); /* Efecto de escala */
+}
+
+/* Control anterior */
+.carousel-control.prev {
+  left: 20px;                     /* Posición izquierda */
+}
+
+/* Control siguiente */
+.carousel-control.next {
+  right: 20px;                    /* Posición derecha */
+}
+
+/* Indicadores de posición */
+.carousel-indicators {
+  position: absolute;             /* Posicionamiento absoluto */
+  bottom: 20px;                   /* Distancia desde abajo */
+  left: 0;                        /* Alineado a la izquierda */
+  right: 0;                       /* Ancho completo */
+  display: flex;                  /* Disposición en línea */
+  justify-content: center;        /* Centrado horizontal */
+  gap: 12px;                      /* Espacio entre indicadores */
+  z-index: 10;                    /* Sobre otros elementos */
+}
+
+/* Estilo de cada indicador */
+.indicator {
+  width: 14px;                    /* Ancho */
+  height: 14px;                   /* Alto */
+  border-radius: 50%;             /* Forma circular */
+  background: rgba(255, 255, 255, 0.5); /* Color semitransparente */
+  border: none;                   /* Sin borde */
+  cursor: pointer;                /* Cursor pointer */
+  transition: all 0.3s ease;      /* Transición suave */
+  padding: 0;                     /* Sin padding */
+  opacity: 0.7;                   /* Ligera transparencia */
+}
+
+/* Indicador activo */
+.indicator.active {
+  background: var(--teal-color);  /* Color corporativo */
+  transform: scale(1.2);          /* Efecto de escala */
+  opacity: 1;                     /* Sin transparencia */
+}
+
+/* 
+ * BOTÓN "VOLVER AL INICIO" 
+ * Estilo llamativo con efectos interactivos
+ * Back button --> Botón "Volver al inicio" 
+ */
+.back-button {
+  display: inline-flex;           /* Disposición en línea con flexbox */
+  align-items: center;            /* Centrado vertical */
+  padding: 14px 32px;             /* Espaciado interno */
+  background: var(--teal-color);  /* Color de fondo */
+  color: white;                   /* Texto blanco */
+  border-radius: 50px;            /* Bordes completamente redondeados */
+  font-weight: 600;               /* Grosor de fuente */
+  position: relative;             /* Para efectos pseudo-elementos */
+  overflow: hidden;               /* Oculta contenido que sobresale */
+  transition: all 0.4s ease;      /* Transición suave */
+  border: none;                   /* Sin borde */
+  cursor: pointer;                /* Cursor pointer */
+  box-shadow: 0 4px 15px rgba(0, 95, 115, 0.3); /* Sombra sutil */
+  margin: 40px auto;              /* Margen exterior */
+  font-family: inherit;           /* Hereda fuente del padre */
+  font-size: 1rem;                /* Tamaño de fuente */
+}
+
+/* Icono dentro del botón */
+.back-button i {
+  margin-right: 8px;              /* Espacio a la derecha */
+  transition: transform 0.3s ease; /* Transición para efecto hover */
+}
+
+/* Efecto hover */
+.back-button:hover {
+  transform: translateY(-3px) scale(1.03); /* Elevación y escala */
+  box-shadow: 0 8px 25px rgba(0, 95, 115, 0.4); /* Sombra más pronunciada */
+  background: #004d5c;            /* Color más oscuro */
+  color: white;                   /* Texto blanco */
+}
+
+/* Animación del icono al hacer hover */
+.back-button:hover i {
+  transform: translateX(-3px);    /* Desplazamiento hacia la izquierda */
+}
+
+/* Efecto de brillo al pasar el mouse */
+.back-button::before {
+  content: '';                    /* Pseudo-elemento vacío */
+  position: absolute;             /* Posicionamiento absoluto */
+  top: 0;                         /* Alineado arriba */
+  left: -100%;                    /* Inicialmente fuera de vista */
+  width: 100%;                    /* Ancho completo */
+  height: 100%;                   /* Alto completo */
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent); /* Degradado */
+  transition: 0.5s;               /* Transición */
+}
+
+/* Animación del brillo al hacer hover */
+.back-button:hover::before {
+  left: 100%;                     /* Desplazamiento a la derecha */
+}
+
+/* Versión outline para el botón de volver */
+.back-button.outline {
+  background-color: transparent;
+  border: 2px solid var(--teal-color);
+  color: var(--teal-color);
+  box-shadow: none;
+}
+
+.back-button.outline:hover {
+  background-color: var(--teal-color);
+  color: white;
+}
+
+.back-button.outline::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+}
+
+/* Efecto al hacer clic */
+.back-button:active {
+  transform: translateY(-1px);
+} 
+
+/* 
+ * FOOTER - Pie de página 
+ */
+footer {
+  background: linear-gradient(135deg, #1b1a1a 0%, #2a2929 100%); /* Degradado oscuro */
+  color: var(--white);           /* Texto blanco */
+  padding: 80px 0 30px;          /* Espaciado interno */
+  position: relative;             /* Para pseudo-elementos */
+  overflow: hidden;               /* Oculta contenido que sobresale */
+}
+
+/* Patrón de puntos sutil */
+footer::before {
+  content: "";                    /* Pseudo-elemento vacío */
+  position: absolute;             /* Posicionamiento absoluto */
+  top: 0;                         /* Alineado arriba */
+  left: 0;                        /* Alineado a la izquierda */
+  right: 0;                       /* Ancho completo */
+  height: 100%;                   /* Alto completo */
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); /* Patrón de puntos */
+  background-size: 15px 15px;     /* Tamaño del patrón */
+  opacity: 0.3;                   /* Transparencia */
+}
+
+/* Contenido del footer */
+.footer-content {
+  display: grid;                  /* Diseño con grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsive */
+  gap: 50px;                      /* Espacio entre columnas */
+  margin-bottom: 50px;            /* Margen inferior */
+  position: relative;             /* Para mantener sobre pseudo-elementos */
+}
+
+/* Títulos de columnas */
+.footer-column h3 {
+  color: var(--white);            /* Texto blanco */
+  margin-bottom: 1.8rem;          /* Margen inferior */
+  font-size: 1.4rem;              /* Tamaño de fuente */
+  position: relative;             /* Para pseudo-elemento */
+  display: inline-block;          /* Para limitar ancho del subrayado */
+}
+
+/* Subrayado animado */
+.footer-column h3::after {
+  content: '';                    /* Pseudo-elemento vacío */
+  position: absolute;             /* Posicionamiento absoluto */
+  left: 0;                        /* Alineado a la izquierda */
+  bottom: -8px;                   /* Posición vertical */
+  width: 50px;                    /* Ancho inicial */
+  height: 2px;                    /* Grosor */
+  background: var(--primary-color); /* Color */
+  transition: width 0.3s ease;    /* Animación de expansión */
+}
+
+/* Efecto hover en títulos */
+.footer-column:hover h3::after {
+  width: 80px;                    /* Ancho expandido */
+}
+
+/* Texto y enlaces */
+.footer-column p,
+.footer-column a {
+  color: rgba(255, 255, 255, 0.8); /* Texto semitransparente */
+  display: block;                 /* Comportamiento de bloque */
+  margin-bottom: 1rem;            /* Margen inferior */
+  line-height: 1.6;               /* Espaciado de línea */
+  transition: all 0.3s ease;      /* Transición suave */
+}
+
+/* Enlaces con efecto */
+.footer-column a {
+  position: relative;             /* Para pseudo-elemento */
+  padding-left: 0;                /* Padding inicial */
+}
+
+/* Flecha indicadora */
+.footer-column a::before {
+  content: '→';                   /* Flecha */
+  position: absolute;             /* Posicionamiento absoluto */
+  left: -15px;                    /* Posición inicial fuera de vista */
+  opacity: 0;                     /* Inicialmente invisible */
+  transition: all 0.3s ease;      /* Transición suave */
+}
+
+/* Efecto hover en enlaces */
+.footer-column a:hover {
+  color: var(--white);            /* Texto blanco sólido */
+  padding-left: 15px;             /* Desplazamiento del texto */
+}
+
+/* Flecha visible al hacer hover */
+.footer-column a:hover::before {
+  opacity: 1;                     /* Visible */
+  left: 0;                        /* Posición final */
+}
+
+/* 
+ * ICONOS SOCIALES EN FOOTER 
+ * Estilo moderno con efectos
+ */
+.social-links {
+  display: flex;                  /* Disposición en línea */
+  gap: 15px;                      /* Espacio entre iconos */
+  margin-top: 2rem;               /* Margen superior */
+  flex-wrap: wrap;                /* Ajuste en pantallas pequeñas */
+}
+
+/* Estilo de cada icono */
+.social-links a {
+  display: flex;                  /* Centrado con flexbox */
+  align-items: center;            /* Centrado vertical */
+  justify-content: center;        /* Centrado horizontal */
+  width: 45px;                    /* Ancho */
+  height: 45px;                   /* Alto */
+  border-radius: 50%;             /* Forma circular */
+  background: rgba(255, 255, 255, 0.08); /* Fondo semitransparente */
+  backdrop-filter: blur(5px);     /* Efecto de desenfoque */
+  color: var(--white);            /* Color del icono */
+  transition: all 0.3s ease;      /* Transición suave */
+  position: relative;             /* Para pseudo-elemento */
+  overflow: hidden;               /* Oculta contenido que sobresale */
+}
+
+/* Degradado para efecto hover */
+.social-links a::after {
+  content: '';                    /* Pseudo-elemento vacío */
+  position: absolute;             /* Posicionamiento absoluto */
+  top: 0;                         /* Alineado arriba */
+  left: 0;                        /* Alineado a la izquierda */
+  width: 100%;                    /* Ancho completo */
+  height: 100%;                   /* Alto completo */
+  background: linear-gradient(45deg, var(--primary-color), rgba(255,255,255,0.2)); /* Degradado */
+  opacity: 0;                     /* Inicialmente transparente */
+  transition: opacity 0.3s ease;  /* Transición suave */
+}
+
+/* Efecto hover */
+.social-links a:hover {
+  background: transparent;        /* Fondo transparente */
+  transform: translateY(-5px) scale(1.05); /* Elevación y escala */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra */
+}
+
+/* Degradado visible al hacer hover */
+.social-links a:hover::after {
+  opacity: 1;                     /* Visible */
+}
+
+/* Asegura que el icono esté sobre el degradado */
+.social-links a i {
+  position: relative;             /* Contexto de apilamiento */
+  z-index: 1;                     /* Sobre el pseudo-elemento */
+}
+
+/* 
+ * COPYRIGHT 
+ * Texto legal en el footer
+ */
+.copyright {
+  text-align: center;             /* Centrado */
+  padding-top: 30px;              /* Espaciado superior */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria */
+  color: rgba(255, 255, 255, 0.7); /* Texto semitransparente */
+  font-size: 0.9rem;              /* Tamaño de fuente */
+  position: relative;             /* Contexto de apilamiento */
+}
+
+
+/* Efecto de onda opcional en la parte superior */
+.wave-divider {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 30px;
+}
+
+.wave-divider .shape-fill {
+  fill: #ffffff; /* Color que coincida con la sección superior */
+}
+
+/* 
+ * BARRA SOCIAL FLOTANTE 
+ * Barra vertical con iconos de redes sociales
+ * Contenedor principal de la barra social Se muestra en el lado izquierdo en desktop y adaptable para móviles
+ */
+.social-bar {
+  position: fixed;                /* Fija en la ventana */
+  left: 0;                        /* Alineada a la izquierda */
+  top: 50%;                       /* Centrada verticalmente */
+  transform: translateY(-50%);    /* Ajuste fino de centrado */
+  display: flex;                  /* Disposición flexible */
+  flex-direction: column;         /* Orientación vertical */
+  gap: 12px;                      /* Espacio entre iconos */
+  z-index: 1000;                  /* Sobre otros elementos */
+  padding-left: 5px;              /* Pequeño margen izquierdo */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición personalizada */
+}
+
+/* Estilos para cada icono social individual */
+.social-icon {
+  display: flex;                  /* Centrado con flexbox */
+  align-items: center;            /* Centrado vertical */
+  width: 55px;                    /* Ancho */
+  height: 55px;                   /* Alto */
+  background-size: 55%;           /* Tamaño del logo */
+  background-position: center;    /* Centrado del logo */
+  background-repeat: no-repeat;   /* Sin repetición */
+  background-color: var(--white); /* Fondo blanco */
+  border-radius: 0 12px 12px 0;   /* Bordes redondeados solo a la derecha */
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  transition: all 0.3s ease, transform 0.2s ease; /* Transiciones */
+  position: relative;             /* Para tooltip */
+  overflow: hidden;               /* Oculta contenido que sobresale */
+}
+
+/* Efecto al pasar el mouse (hover) */
+.social-icon:hover {
+  transform: translateX(8px) scale(1.05); /* Desplazamiento y escala */
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+  width: 65px;                    /* Ligera expansión */
+}
+
+/* Efecto al hacer clic */
+.social-icon:active {
+  transform: translateX(5px) scale(0.98); /* Efecto de "presionado" */
+}
+
+/* Tooltip muestra el nombre de la red social */
+.social-icon::after {
+  content: attr(data-tooltip);    /* Texto del atributo data-tooltip */
+  position: absolute;             /* Posicionamiento absoluto */
+  left: 100%;                     /* A la derecha del icono */
+  white-space: nowrap;            /* Sin saltos de línea */
+  background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  color: white;                   /* Texto blanco */
+  padding: 5px 12px;              /* Espaciado interno */
+  border-radius: 0 12px 12px 0;   /* Bordes redondeados */
+  font-size: 14px;                /* Tamaño de fuente */
+  opacity: 0;                     /* Inicialmente invisible */
+  transition: opacity 0.3s ease;  /* Transición suave */
+  pointer-events: none;           /* Permite clics a través */
+}
+
+/* Muestra Tooltip visible al hacer hover */
+.social-icon:hover::after {
+  opacity: 1;                     /* Visible */
+  margin-left: 10px;              /* Pequeña separación */
+}
+
+/* 
+ * ESTILOS ESPECÍFICOS PARA CADA RED SOCIAL 
+ * Colores y logos personalizados
+ * Define colores de fondo y logos para cada plataforma
+ */
+.facebook {
+  background-color: #3b5998;      /* Azul Facebook */
+  background-image: url("https://cdn-icons-png.flaticon.com/512/733/733547.png"); /* Logo */
+}
+
+.tiktok {
+  background-color: #000000;      /* Negro TikTok */
+  background-image: url("https://cdn-icons-png.flaticon.com/512/3046/3046121.png"); /* Logo */
+}
+
+.youtube {
+  background-color: #ff0000;      /* Rojo YouTube */
+  background-image: url("https://cdn-icons-png.flaticon.com/512/733/733646.png"); /* Logo */
+}
+
+.whatsapp {
+  background-color: #25d366;      /* Verde WhatsApp */
+  background-image: url("https://cdn-icons-png.flaticon.com/512/733/733585.png"); /* Logo */
+}
+
+.web {
+  background-color: #5e5e5e;      /* Gris para enlace web */
+  background-image: url("https://cdn-icons-png.flaticon.com/512/535/535239.png"); /* Icono genérico */
+}
+
+/* 
+ * MEDIA QUERIES - DISEÑO RESPONSIVE 
+ * Adaptaciones para diferentes tamaños de pantalla
+ */
+
+/* Tablet - 992px o menos */
+@media (max-width: 992px) {
+  .carousel-inner {
+    height: 450px;                /* Altura reducida */
+  }
+  h1 {
+    font-size: 2.2rem;            /* Tamaño de fuente reducido */
+  }
+  h2 {
+    font-size: 1.8rem;            /* Tamaño de fuente reducido */
+  }
+}
+
+/* Tablet pequeña - 768px o menos */
+@media (max-width: 768px) {
+  .carousel-inner {
+    height: 400px;                /* Altura reducida */
+  }
+  header {
+    padding: 40px 0 60px;         /* Espaciado reducido */
+  }
+  .subtitle {
+    font-size: 1.1rem;            /* Tamaño de fuente reducido */
+  }
+  .feature-section {
+    padding: 20px;                /* Espaciado interno reducido */
+  }
+  .carousel-caption {
+    padding: 20px;                /* Espaciado reducido */
+  }
+  .carousel-control {
+    width: 42px;                  /* Tamaño reducido */
+    height: 42px;                 /* Tamaño reducido */
+    font-size: 1.1rem;            /* Tamaño de icono reducido */
+  }
+}
+
+/* Móvil - 576px o menos */
+@media (max-width: 576px) {
+  .carousel-inner {
+    height: 350px;                /* Altura reducida */
+  }
+  h1 {
+    font-size: 1.8rem;            /* Tamaño de fuente reducido */
+  }
+  h2 {
+    font-size: 1.5rem;            /* Tamaño de fuente reducido */
+  }
+  .carousel-caption {
+    padding: 15px;                /* Espaciado reducido */
+  }
+  .indicator {
+    width: 10px;                  /* Tamaño reducido */
+    height: 10px;                 /* Tamaño reducido */
+  }
+  .back-button {
+    padding: 10px 20px;           /* Espaciado reducido */
+    font-size: 0.9rem;            /* Tamaño de fuente reducido */
+  }
+  .process-steps li {
+    padding-left: 40px;           /* Espaciado reducido */
+  }
+  .process-steps li:before {
+    width: 25px;                  /* Tamaño reducido */
+    height: 25px;                 /* Tamaño reducido */
+    font-size: 0.9rem;            /* Tamaño de fuente reducido */
+  }
+}
